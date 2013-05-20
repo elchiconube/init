@@ -33,19 +33,10 @@
 
 <head/>
 <body>
-    <section>
+    <section class="container">
+        <div class="sixtten columns alpha omega">
+        </div>
 
-        <header>
-
-        </header>
-
-        <section>
-
-        </section>
-        
-        <footer>
-            
-        <footer>
 
     </section>
 
@@ -57,8 +48,6 @@
     </div>-->
    
 
-
-    <!-- Ejemplo Slider
     <div id="slider"  class="swipe">
       <div class="swipe-wrap">
         <div><img src="img/fakes/grumpy.jpg" alt="It's Grumpy Cat" /></div>
@@ -70,13 +59,18 @@
     <div class="slider-pagination">  
         <button onclick='mySwipe.prev()'>prev</button> 
         <button onclick='mySwipe.next()'>next</button>
-    </div>-->
+    </div>
 
     <script src="js/vendor/jquery-1.8.0.min.js"></script>
+    <script src="js/placeholder.js"></script>
     <script src="js/reveal.js"></script>
     <script src="js/swipe.js"></script>
-
+    <script src="ellipsis.js"></script>
     <script>
+        $(document).ready(function(){
+                $(".ellipsis").ellipsis();                  
+            });
+
         // pure JS
         var elem = document.getElementById('slider');
         window.mySwipe = Swipe(elem, {

@@ -4,11 +4,16 @@
     Inicio: 00/00/0000
 */
 
-/* Comunes */
+/* Común */
 
 body{
     font: 16px Arial;
     color: #222;
+}
+
+a:active, a:active, a:focus, a:focus * { 
+	outline: none !important; 
+	-moz-outline-style: none !important; 
 }
 
 
@@ -16,32 +21,48 @@ body{
 
 h1, h2, h3, h4, h5, h6 {
 	color: #222;
-	font-family: "Georgia", "Times New Roman", serif;
+	font-family: Arial;
 	font-weight: normal; 
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { 
-
 }
 
-p { }
+p { 
+    font: 16px Arial;
+    color: #222;
+}
 
+/* Estilos de la web*/
 
-/* Estilos para tu página*/
+	/* Aquí los CSS de tu web*/
 
-
-/* Fuentes */
+/* Fuente */
 
 
 @font-face {
-	    font-family: 'FontName';
-	    src: url('../fonts/FontName.eot');
-	    src: url('../fonts/FontName.eot?iefix') format('eot'),
-	         url('../fonts/FontName.woff') format('woff'),
-	         url('../fonts/FontName.ttf') format('truetype'),
-	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
-	    font-weight: normal;
-	    font-style: normal; 
+    font-family: 'FontName';
+    src: url('../fonts/FontName.eot');
+    src: url('../fonts/FontName.eot?iefix') format('eot'),
+         url('../fonts/FontName.woff') format('woff'),
+         url('../fonts/FontName.ttf') format('truetype'),
+         url('../fonts/FontName.svg#FontName') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+
+/* Clases de ayuda */
+
+
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ellipsis.multiline {
+    white-space: normal;
 }
 
 
