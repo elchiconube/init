@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="format-detection" content="telephone=no">
 
     <link rel="apple-touch-icon-precomposed" href="57.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="72.png"/>
@@ -31,7 +32,7 @@
 
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
-<head/>
+</head>
 <body>
     <section class="container">
         <div class="sixtten columns alpha omega">
@@ -48,6 +49,12 @@
     </div>-->
    
 
+
+
+    <nav class="slider-pagination">  
+        <button onclick='mySwipe.prev()'>prev</button> 
+        <button onclick='mySwipe.next()'>next</button>
+    </nav>
     <div id="slider"  class="swipe">
       <div class="swipe-wrap">
         <div><img src="img/fakes/grumpy.jpg" alt="It's Grumpy Cat" /></div>
@@ -56,35 +63,57 @@
         <div><img src="img/fakes/grumpy.jpg" alt="It's Grumpy Cat" /></div>
       </div>
     </div>
-    <div class="slider-pagination">  
-        <button onclick='mySwipe.prev()'>prev</button> 
-        <button onclick='mySwipe.next()'>next</button>
-    </div>
+    <ul id="position"></ul>
 
     <script src="js/vendor/jquery-1.8.0.min.js"></script>
     <script src="js/placeholder.js"></script>
     <script src="js/reveal.js"></script>
     <script src="js/swipe.js"></script>
-    <script src="ellipsis.js"></script>
+    <script src="js/dotdotdot.js"></script>
     <script>
         $(document).ready(function(){
-                $(".ellipsis").ellipsis();                  
+
+            $(".description").dotdotdot({
+                ellipsis    : '... ',
+                wrap        : 'word',
+                after       : null,
+                watch       : false,
+                height      : 40,
+                tolerance   : 0,
+                callback    : function( isTruncated, orgContent ) {},
+                lastCharacter   : {
+                    remove      : [ ' ', ',', ';', '.', '!', '?' ],
+                    noEllipsis  : []
+                }
+
             });
 
-        // pure JS
-        var elem = document.getElementById('slider');
-        window.mySwipe = Swipe(elem, {
-          // startSlide: 4,
-          // auto: 3000,
-          // continuous: true,
-          // disableScroll: true,
-          // stopPropagation: true,
-          // callback: function(index, element) {},
-          // transitionEnd: function(index, element) {}
         });
 
-        // with jQuery
-        // window.mySwipe = $('#slider').Swipe().data('Swipe');
+        var slider =
+          Swipe(document.getElementById('slider'), {
+            auto: 55000,
+            continuous: true,
+            callback: function(pos) {
+              var i = bullets.length;
+              while (i--) {
+                bullets[i].className = ' ';
+              }
+              bullets[pos].className = 'on';
+            }
+          });
+
+        var i = slider.getNumSlides();
+        while (i--) {
+          document.getElementById('position').appendChild(document.createElement('li'));
+        } 
+
+        var bullets = document.getElementById('position').getElementsByTagName('li');
+
+        bullets[0].className='on';
+
+
+
     </script>
 </body>
 </html>
