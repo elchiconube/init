@@ -1,0 +1,60 @@
+/* TABLE OF CONTENTS
+==================================================
+  #COMMON
+  #TYPOGRAPHY
+  #...
+  #HELP CLASSES
+
+
+/* #COMMON
+================================================== */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+
+/* #TYPOGRAPHY
+================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a{
+  color: #1a1a1a;
+}
+
+.bloquote{
+  font-style: italic;
+}
+
+/* #HELP CLASSES
+================================================== */
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+* html .clearfix {
+  zoom: 1;
+}
+
+*:first-child+html .clearfix {
+  zoom: 1;
+}
