@@ -1,32 +1,37 @@
-Init
-====
+# Init
 
-Init it's a HTML5 initializer
+Init it is a project initiation template for organize your front-end files. This is not the best way but it's my way so feel free to use it if you want.
 
+  - Simple organization of different type of files
+  - Apply to any CMS or project
+  - Magic
 
-reset.css: Todo lo relacionado al reseteo de etiquetas, basado en el proyecto modernizr a poder ser debería de utilizarse conjuntamente con un polyfill de HTML5 para versiones antiguas de IE.
-fonts.css: Todo lo relacionado a fuentes embebidas, Google Fonts e iconografía
-layout.css: Todo lo relacionado a la estructura. Debería estar hecha toda con ID's
-common.css: Todo las reglas comunes de CSS: Ej. Fuente por defecto
-modules.css: Cada módulo irá maquetado y deberá funcionar de forma independiente de tal forma que se pueda exportar a otros proyectos y reutilizar el código. Cada módulo comenzará con un comentario descriptivo.
-main.css: Información del proyecto e importación de archivos css utilizados anteriormente
+### Version
+2.0.0
 
-El árbol de carpetas y archivos ideal sería este:
+### Download with GIT
 
-css
-reset.css
-fonts.css
-layout.css
-common.css
-modules.css
-main.css
-js
-main.js
-vendor (carpeta con librerías)
-jquery.js
-moderinzr.min.js
-img
-fakes (carpeta para imágenes ejemplo que se borrará)
-noise.png
-fonts
-icons.ttf
+You need Gulp installed globally:
+
+```sh
+$ git clone git@github.com:elchiconube/Init.git
+$ cd Init
+
+```
+
+Readmes, how to use them in your own application can be found here:
+
+* plugins/dropbox/README.md
+* plugins/github/README.md
+* plugins/googledrive/README.md
+* plugins/onedrive/README.md
+
+### License
+
+Want to contribute? Great! Init is Open Source 
+
+### Author
+
+If you want, visit my [site].
+
+[site:http://oscarbustos.me/]
